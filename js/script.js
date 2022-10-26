@@ -29,7 +29,20 @@ createApp({
                     title: 'Paradise',
                     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
                 }
-            ]
+            ],
+            
+            imageIndex: 0
+
+        }
+    },
+
+    methods: {
+        goToNextImg(){
+           this.imageIndex < this.slides.length - 1 ? this.imageIndex ++ : this.imageIndex = 0
+        },
+
+        goToPrevImg(){
+            this.imageIndex > 0 ? this.imageIndex -- : this.imageIndex = this.slides.length - 1
         }
     }
 }).mount("#app");
