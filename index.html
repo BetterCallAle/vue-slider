@@ -29,20 +29,11 @@
                 <div class="thumbs">
                     <div @click="goToPrevImg" class="prev"></div>
                     <div @click="goToNextImg" class="next"></div>
-                    <div class="thumb active">
-                        <img src="img/01.jpg" alt="Svezia"/>
-                    </div>
-                    <div class="thumb">
-                        <img src="img/02.jpg" alt="Svizzera" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.jpg" alt="Gran Bretagna" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.jpg" alt="Germania" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.jpg" alt="Paradise" />
+                    <div @click="goToThisImg(index)" 
+                        v-for="(element, index) in slides"
+                        :class="index === imageIndex ? 'active' : ''"
+                        class="thumb">
+                        <img :src="element.image" :alt="element.title"/>
                     </div>
                 </div>
 

@@ -43,6 +43,10 @@ createApp({
 
         goToPrevImg(){
             this.imageIndex > 0 ? this.imageIndex -- : this.imageIndex = this.slides.length - 1
+        },
+
+        goToThisImg(indexNum){
+            this.imageIndex = indexNum
         }
     }
 }).mount("#app");
