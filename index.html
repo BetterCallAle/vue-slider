@@ -14,13 +14,19 @@
     <div id="app">
 
         <div class="container" >
-            <div  class="slider-wrapper" tabindex="0">
+            <div 
+                @mouseover="hover = true, timer()" 
+                @mouseleave="hover = false, timer()"
+                class="slider-wrapper" tabindex="0"
+            >
 
                 <div class="item">
-                    <img @mouseover="hover = true, timer()" 
-                         @mouseleave="hover = false, timer()" 
+
+                    <img 
                         :src="slides[imageIndex].image" 
-                        alt="Svezia" />
+                        alt="Svezia" 
+                    />
+                    
                     <div class="text">
                         <h3>{{ slides[imageIndex].title }}</h3>
                         <p>
