@@ -35,7 +35,7 @@ createApp({
 
             autoPlay: setInterval(this.goToNextImg, 1000),
 
-            hover: false
+            hover: ""
         }
     },
 
@@ -52,11 +52,11 @@ createApp({
             this.imageIndex = indexNum
         },
 
-        stopAutoplay(){
-            if(hover){
+        timer(){
+            if(this.hover){
                 clearInterval(this.autoPlay)
-            }else{
-                autoPlay = setInterval(this.goToNextImg, 1000)
+            } else {
+                this.autoPlay = setInterval(this.goToNextImg, 1000)
             }
         }
     }

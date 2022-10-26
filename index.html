@@ -17,8 +17,8 @@
             <div  class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img @mouseover="hover = true" 
-                        @mouseleave="hover = false" 
+                    <img @mouseover="hover = true, timer()" 
+                         @mouseleave="hover = false, timer()" 
                         :src="slides[imageIndex].image" 
                         alt="Svezia" />
                     <div class="text">
@@ -44,7 +44,6 @@
 
             </div>
         </div>
-
     </div>
 
     <script src="js/script.js"></script>
