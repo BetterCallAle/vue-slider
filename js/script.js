@@ -48,5 +48,9 @@ createApp({
         goToThisImg(indexNum){
             this.imageIndex = indexNum
         }
+    },
+
+    created(){
+       setInterval(this.goToNextImg, 1000) 
     }
 }).mount("#app");
