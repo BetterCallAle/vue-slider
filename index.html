@@ -14,10 +14,13 @@
     <div id="app">
 
         <div class="container" >
-            <div class="slider-wrapper" tabindex="0">
+            <div  class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[imageIndex].image" alt="Svezia" />
+                    <img @mouseover="hover = true" 
+                        @mouseleave="hover = false" 
+                        :src="slides[imageIndex].image" 
+                        alt="Svezia" />
                     <div class="text">
                         <h3>{{ slides[imageIndex].title }}</h3>
                         <p>
@@ -29,10 +32,12 @@
                 <div class="thumbs">
                     <div @click="goToPrevImg" class="prev"></div>
                     <div @click="goToNextImg" class="next"></div>
+                    
                     <div @click="goToThisImg(index)" 
                         v-for="(element, index) in slides"
                         :class="index === imageIndex ? 'active' : ''"
-                        class="thumb">
+                        class="thumb"
+                    >
                         <img :src="element.image" :alt="element.title"/>
                     </div>
                 </div>

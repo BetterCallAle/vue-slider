@@ -31,8 +31,11 @@ createApp({
                 }
             ],
             
-            imageIndex: 0
+            imageIndex: 0,
 
+            autoPlay: setInterval(this.goToNextImg, 1000),
+
+            hover: false
         }
     },
 
@@ -47,10 +50,14 @@ createApp({
 
         goToThisImg(indexNum){
             this.imageIndex = indexNum
-        }
-    },
+        },
 
-    created(){
-       setInterval(this.goToNextImg, 1000) 
+        stopAutoplay(){
+            if(hover){
+                clearInterval(this.autoPlay)
+            }else{
+                autoPlay = setInterval(this.goToNextImg, 1000)
+            }
+        }
     }
 }).mount("#app");
